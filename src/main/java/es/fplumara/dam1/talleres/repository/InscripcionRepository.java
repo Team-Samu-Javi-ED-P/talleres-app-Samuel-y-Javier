@@ -9,7 +9,7 @@ public interface InscripcionRepository {
 
     Inscripcion findById(Long id);
 
-    Inscripcion findByTallerIdAndUsuarioId(Long tallerId, Long usuarioId);
+    Object findByTallerIdAndUsuarioId(Long tallerId, Long usuarioId);
 
     Inscripcion findByTallerId(Long tallerId);
 

@@ -1,6 +1,5 @@
 package es.fplumara.dam1.talleres.model;
 
-
 /**
  * - **id**
  *
@@ -26,6 +25,7 @@ package es.fplumara.dam1.talleres.model;
  *
  *     Correo electrónico del usuario
  */
+
 public class Usuario {
 
     private Long id;

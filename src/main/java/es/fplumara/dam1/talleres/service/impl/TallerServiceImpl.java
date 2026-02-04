@@ -50,7 +50,7 @@ public class TallerServiceImpl implements TallerService {
     }
 
     @Override
-    public Taller atualizarTaller(Long id, ActualizarTallerDTO dto) {
+    public Taller actualizarTaller(Long id, ActualizarTallerDTO dto) {
         return null;
     }
 

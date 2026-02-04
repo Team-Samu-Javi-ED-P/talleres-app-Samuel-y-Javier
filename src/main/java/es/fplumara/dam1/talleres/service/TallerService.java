@@ -15,7 +15,7 @@ public interface TallerService {
 
     Taller obtenerTaller(Long id);
 
-    Taller atualizarTaller(Long id, ActualizarTallerDTO dto);
+    Taller actualizarTaller(Long id, ActualizarTallerDTO dto);
 
     Taller cambiarEstadoTaller(Long id, EstadoInscripcion estadoInscripcion);
 

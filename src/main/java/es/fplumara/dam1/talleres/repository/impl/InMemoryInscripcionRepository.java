@@ -3,7 +3,9 @@ package es.fplumara.dam1.talleres.repository.impl;
 import es.fplumara.dam1.talleres.repository.InscripcionRepository;
 import es.fplumara.dam1.talleres.model.Inscripcion;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class InMemoryInscripcionRepository implements InscripcionRepository {
@@ -41,18 +43,18 @@ public class InMemoryInscripcionRepository implements InscripcionRepository {
     }
 
     @Override
-    public Inscripcion findByTallerIdAndUsuarioId(Long tallerId, Long usuarioId) {
+    public List<Inscripcion> findByTallerIdAndUsuarioId(Long tallerId, Long usuarioId) {
         /**
         String inscripcionId = tallerId.toString()+"/"+usuarioId.toString();
         return inscripciones.get(inscripcionId);
          **/
         for (Inscripcion inscripcionesId : listaId.values()) {
             if (inscripcionesId.getUsuarioId().equals(usuarioId) && inscripcionesId.getTallerId().equals(tallerId)) {
-                return inscripcionesId;
+                return Collections.singletonList(inscripcionesId);
             }
         }
         /** Aqui tendria que devolver algo o no? **/
-        return inscripcionesAlmacenados.get(inscripcionesId);
+        return null;
 
     }
 
@@ -80,21 +82,21 @@ public class InMemoryInscripcionRepository implements InscripcionRepository {
 
     @Override
     public Inscripcion findByTallerIdAndRol(Long tallerId, Long rol) {
-        for (Inscripcion inscripcion : listaId.values()) {
 
-        }
         return null;
     }
 
     @Override
     public Inscripcion deleteById(Long id) {
-        inscripcionesAlmacenados.remove(id);
-        return null;
+        return listaId.remove(id);
     }
 
     @Override
     public Inscripcion deleteByTallerIdAndUsuarioId(Long tallerId, Long usuarioId) {
-
+        Inscripcion borrarInscripcionUsuario = (Inscripcion) findByTallerIdAndUsuarioId(tallerId, usuarioId);
+        if (borrarInscripcionUsuario != null) {
+            listaId.remove(borrarInscripcionUsuario.getId());
+        }
         return null;
     }
 }

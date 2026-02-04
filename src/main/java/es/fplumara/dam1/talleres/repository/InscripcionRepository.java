@@ -2,6 +2,8 @@ package es.fplumara.dam1.talleres.repository;
 
 import es.fplumara.dam1.talleres.model.Inscripcion;
 
+import java.util.List;
+
 public interface InscripcionRepository {
 
 
@@ -9,7 +11,7 @@ public interface InscripcionRepository {
 
     Inscripcion findById(Long id);
 
-    Inscripcion findByTallerIdAndUsuarioId(Long tallerId, Long usuarioId);
+    List<Inscripcion> findByTallerIdAndUsuarioId(Long tallerId, Long usuarioId);
 
     Inscripcion findByTallerId(Long tallerId);
 

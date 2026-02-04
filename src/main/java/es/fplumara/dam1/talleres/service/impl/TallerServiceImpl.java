@@ -22,10 +22,10 @@ public class TallerServiceImpl implements TallerService {
 
     @Override
     public Taller createTaller(CrearTallerDTO crearTallerDTO) {
-        if (crearTallerDTO.getTitulo() == null) {
+        if(crearTallerDTO.getTitulo() == null){
             throw new DatosTallerException("titulo requerido");
         }
-        if (crearTallerDTO.getDescripcion() == null) {
+        if (crearTallerDTO.getDescripcion() == null){
             throw new DatosTallerException("descripcion requerida");
         }
         Taller taller = new Taller();
@@ -50,7 +50,7 @@ public class TallerServiceImpl implements TallerService {
     }
 
     @Override
-    public Taller atualizarTaller(Long id, ActualizarTallerDTO dto) {
+    public Taller actualizarTaller(Long id, ActualizarTallerDTO dto) {
         return null;
     }
 
@@ -60,8 +60,7 @@ public class TallerServiceImpl implements TallerService {
     }
 
     @Override
-    public Taller eliminarTaller(Long id) {
-
+    public void eliminarTaller(Long id) {
 
     }
 }

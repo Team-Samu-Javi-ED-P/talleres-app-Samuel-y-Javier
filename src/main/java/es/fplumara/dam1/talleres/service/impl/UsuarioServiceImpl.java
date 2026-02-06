@@ -115,7 +115,7 @@ public class UsuarioServiceImpl implements UsuarioService {
             inscripcionRepository.deleteById(inscripcion.getId());
         }
 
-        userRepository.deleteById(idUsuario.intValue());
+        userRepository.deleteById((long) idUsuario.intValue());
 
         return new DeleteSummaryDTO(inscripcions.size());
     }

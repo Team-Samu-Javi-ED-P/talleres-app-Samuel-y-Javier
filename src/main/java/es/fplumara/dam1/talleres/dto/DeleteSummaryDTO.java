@@ -3,6 +3,7 @@ package es.fplumara.dam1.talleres.dto;
 public class DeleteSummaryDTO {
 
     private Integer idsIncripcionesBorradas;
+
     public DeleteSummaryDTO (Integer idsIncripcionesBorradas) {
         this.idsIncripcionesBorradas = idsIncripcionesBorradas;
     }
@@ -11,7 +12,7 @@ public class DeleteSummaryDTO {
         return idsIncripcionesBorradas;
     }
 
-    public  void setIdBorradas(Integer idsIncripcionesBorradas) {
+    public void setIdsIncripcionesBorradas(Integer idsIncripcionesBorradas) {
         this.idsIncripcionesBorradas = idsIncripcionesBorradas;
     }
 

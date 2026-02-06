@@ -19,4 +19,5 @@ public interface UserRepository {
     List<Usuario> findAll();
 
     boolean existsById(Long id);
+
 }
